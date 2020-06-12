@@ -10,8 +10,17 @@ const Jimp = require('jimp');
 const A = { x: 270, y: 695 };
 
 exports.genImage = functions.https.onRequest(async (req, res) => {
+    console.log("Request method:", req.method);
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set('Access-Control-Allow-Methods', '*');
+    res.set('Access-Control-Allow-Headers', '*');
+    if (req.method === "OPTIONS") {
+        res.end();
+        return;
+    }
+
     let image = await Jimp.read('./promo_v1.png');
-    console.log(req.body);
+    console.log("Body: ", req.body);
     const phone = req.body.phone;
     await Jimp.loadFont(Jimp.FONT_SANS_10_BLACK).then(font => image.print(font, A.x, A.y, phone));
     // await image.writeAsync('out.png');

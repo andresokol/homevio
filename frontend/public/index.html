@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>every3.help</title>
+
+  <style media="screen">
+  </style>
+</head>
+
+<body>
+  <h1>Hello, world</h1>
+
+  <div>
+    <h2>Форма так форма</h2>
+
+    <div>
+      <label>Название: </label>
+      <input id="input_orgname" type="text" value="Центр Центральный Центрище Центр" />
+    </div>
+    <div>
+      <label>Телефон: </label>
+      <input id="input_phone" type="text" value="+7 (999) 000-00-00" />
+    </div>
+    <div>
+      <label>Адрес: </label>
+      <input id="input_address" type="text" value="Ковров, ул. Воздвиженская, д. 67" />
+    </div>
+
+    <button onclick="handleClickSubmit(event)">Нажми меня</button>
+  </div>
+
+  <hr />
+
+  <div>
+    <h1>Результат так результат</h1>
+    <div>
+      <img id="img_target" />
+    </div>
+  </div>
+
+  <script>
+    function draw(data) {
+      console.log(data);
+      var reader = new FileReader();
+      reader.readAsDataURL(data);
+      reader.onloadend = function () {
+        document.getElementById("img_target").src = reader.result;
+      }
+    }
+
+    function handleClickSubmit(event) {
+      // resetting
+      document.getElementById("img_target").src = "";
+
+      console.log(event);
+      var orgname = document.getElementById('input_orgname').value;
+      var phone = document.getElementById('input_phone').value;
+      var address = document.getElementById('input_address').value;
+
+      console.log(orgname, phone, address);
+
+      fetch(`http://localhost:5001/homevio/us-central1/genImage/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({ orgname, phone, address })
+      }).then(
+        response => response.blob().then(data => draw(data))
+      );
+    }
+  </script>
+</body>
+
+</html>
