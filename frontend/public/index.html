@@ -1,17 +1,77 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>every3.help</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>every3.help</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="index.css" rel="stylesheet" />
 
-  <style media="screen">
-  </style>
-</head>
+    <style>
+      * {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+      }
+    </style>
+  </head>
 
-<body>
-  <h1>Hello, world</h1>
+  <body>
+    <div class="container">
+      <div class="block">
+        <div>
+          <div class="logo_mock"></div>
+        </div>
+        <div>
+          <p>
+            Мы знаем по себе, что общественная проблема может задавить своим
+            масштабом и заставить чувствовать тотальную личную беспомощность. Но
+            это только видимость.
+          </p>
+          <p>
+            <b>
+              Индивидуальное неравнодушие и готовность действовать – решают всё.
+            </b>
+          </p>
+          <p>
+            Этот сайт – живой инструмент для системной профилактики домашнего
+            насилия на локальном уровне, буквально на уровне вашего подъезда!
+            Листайте ниже, чтобы создать своё объявление с отрывными листками.
+          </p>
+
+          <div class="drawn_button_cnt">
+            <div class="drawn_button">Домашнее насилие -- это</div>
+            <div class="drawn_button">
+              Почему объявление с отрывными листками
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="download_counter">
+          <p>скачано</p>
+          <p id="download_counter_number">43</p>
+          <p id="download_counter_descriptor">объявления</p>
+        </div>
+
+        <div>
+          <h1>Подготавливаем материалы</h1>
+          <p>
+            - лист бумаги А4<br />
+            - ч/б или цветной принтер<br />
+            - канцелярский нож/ножницы<br />
+            - клей/кнопки/скотч<br />
+            и настроение менять мир<br />
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <h1>Hello, world</h1>
 
   <div>
     <h2>Форма так форма</h2>
@@ -39,40 +99,55 @@
     <div>
       <img id="img_target" />
     </div>
-  </div>
+  </div> -->
 
-  <script>
-    function draw(data) {
-      console.log(data);
-      var reader = new FileReader();
-      reader.readAsDataURL(data);
-      reader.onloadend = function () {
-        document.getElementById("img_target").src = reader.result;
+    <script>
+      setInterval(function () {
+        var cnt = Math.floor(Math.random() * 2000) + 1;
+        var cnt_description = "объявлений";
+
+        if (cnt % 100 >= 10 && cnt % 100 < 20) {
+          //
+        } else if (cnt % 10 == 1) {
+          cnt_description = "объявление";
+        } else if (cnt % 10 == 2 || cnt % 10 == 3 || cnt % 10 == 4) {
+          cnt_description = "объявления";
+        }
+
+        document.getElementById("download_counter_number").innerText = cnt;
+        document.getElementById(
+          "download_counter_descriptor"
+        ).innerText = cnt_description;
+      }, 2000);
+
+      function draw(data) {
+        console.log(data);
+        var reader = new FileReader();
+        reader.readAsDataURL(data);
+        reader.onloadend = function () {
+          document.getElementById("img_target").src = reader.result;
+        };
       }
-    }
 
-    function handleClickSubmit(event) {
-      // resetting
-      document.getElementById("img_target").src = "";
+      function handleClickSubmit(event) {
+        // resetting
+        document.getElementById("img_target").src = "";
 
-      console.log(event);
-      var orgname = document.getElementById('input_orgname').value;
-      var phone = document.getElementById('input_phone').value;
-      var address = document.getElementById('input_address').value;
+        console.log(event);
+        var orgname = document.getElementById("input_orgname").value;
+        var phone = document.getElementById("input_phone").value;
+        var address = document.getElementById("input_address").value;
 
-      console.log(orgname, phone, address);
+        console.log(orgname, phone, address);
 
-      fetch(`http://localhost:5001/homevio/us-central1/genImage/`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify({ orgname, phone, address })
-      }).then(
-        response => response.blob().then(data => draw(data))
-      );
-    }
-  </script>
-</body>
-
+        fetch(`http://localhost:5001/homevio/us-central1/genImage/`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+          body: JSON.stringify({ orgname, phone, address }),
+        }).then((response) => response.blob().then((data) => draw(data)));
+      }
+    </script>
+  </body>
 </html>

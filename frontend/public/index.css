@@ -1,0 +1,67 @@
+div.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+div.block {
+  display: flex;
+  width: 100%;
+}
+
+div.logo_mock {
+  width: 200px;
+  height: 200px;
+
+  margin: 40px 100px;
+
+  border-radius: 62px;
+  background-color: #c4c4c4;
+}
+
+div.drawn_button_cnt {
+  display: flex;
+  justify-content: space-around;
+}
+
+div.drawn_button {
+  width: 420px;
+  height: 80px;
+  padding: 10px 50px;
+  box-sizing: border-box;
+
+  background-image: url("./img/button_bg.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-weight: 700;
+}
+
+div.download_counter {
+  text-align: center;
+
+  background-image: url("./img/counter_bg.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 380px;
+  height: 260px;
+  padding: 45px 0 0 0;
+  box-sizing: border-box;
+}
+
+div.download_counter > p {
+  font-weight: 900;
+  font-size: 36px;
+  margin: 0;
+}
+
+div.download_counter > p#download_counter_number {
+  font-size: 72px;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 48px;
+}
