@@ -5,6 +5,7 @@ div.container {
 
 div.block {
   display: flex;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -64,4 +65,14 @@ div.download_counter > p#download_counter_number {
 h1 {
   font-weight: 900;
   font-size: 48px;
+}
+
+p.e {
+  padding: 0;
+  margin: 0;
+
+  text-align: right;
+  font-weight: 900;
+  font-size: 120px;
+  color: #d0cece;
 }
