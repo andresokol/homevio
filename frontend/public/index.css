@@ -1,19 +1,19 @@
-div.container {
+/* div.container {
   max-width: 1440px;
   margin: 0 auto;
-}
+} */
 
-div.block {
+/* div.block {
   display: flex;
   justify-content: space-between;
   width: 100%;
-}
+} */
 
 div.logo_mock {
   width: 200px;
   height: 200px;
 
-  margin: 40px 100px;
+  /* margin: 40px 100px; */
 
   border-radius: 62px;
   background-color: #c4c4c4;

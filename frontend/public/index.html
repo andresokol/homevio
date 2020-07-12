@@ -6,11 +6,20 @@
     <title>every3.help</title>
 
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
     <link href="index.css" rel="stylesheet" />
 
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/jquery-latest.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <style>
       html,
       body {
@@ -19,17 +28,18 @@
 
         margin: 0;
         padding: 0;
+        padding-top: 20px;
       }
     </style>
   </head>
 
   <body>
-    <div class="container">
-      <div class="block">
-        <div>
+    <div class="ui container grid">
+      <div class="row">
+        <div class="four wide column" style="text-align: center;">
           <div class="logo_mock"></div>
         </div>
-        <div>
+        <div class="twelve wide column">
           <p>
             Мы знаем по себе, что общественная проблема может задавить своим
             масштабом и заставить чувствовать тотальную личную беспомощность. Но
@@ -55,75 +65,113 @@
         </div>
       </div>
 
-      <div class="block">
-        <div class="download_counter">
-          <p>скачано</p>
-          <p id="download_counter_number">43</p>
-          <p id="download_counter_descriptor">объявления</p>
+      <div class="row">
+        <div class="six wide column">
+          <div class="download_counter">
+            <p>скачано</p>
+            <p id="download_counter_number">43</p>
+            <p id="download_counter_descriptor">объявления</p>
+          </div>
         </div>
-
-        <div>
+        <div class="ten wide column">
           <h1>Подготавливаем материалы</h1>
           <p>
             - лист бумаги А4<br />
             - ч/б или цветной принтер<br />
             - канцелярский нож/ножницы<br />
             - клей/кнопки/скотч<br />
-            и настроение менять миhttp://localhost:5000/р<br />
+            и настроение менять мир<br />
           </p>
         </div>
       </div>
 
-      <div class="block">
-        <h1>Генерируем объявление</h1>
-        <div>
-          <input type="text" />
-          <input type="text" />
-          <input type="text" />
+      <div class="row">
+        <div class="sixteen wide column" style="text-align: center;">
+          <h1>Генерируем объявление</h1>
         </div>
       </div>
 
-      <button>Скачать объявление</button>
-
-      <div class="block">
-        <h1>Печатаем</h1>
-        <h1>Прорезаем</h1>
-      </div>
-
-      <div class="block">
-        <h1>Распространяем</h1>
-        <div style="width: 350px;">
-          <b>где можно распространять:</b><br />
-          информационные стенды и доски для объявлений в подъезде, офисе, школе,
-          университете и в других пространствах. Пожалуйста, по возможности
-          спрашивайте разрешение на распространение объявления на конкретной
-          площадке – за счёт этого оно дольше будет висеть и соответственно
-          приносить пользу, его увидят больше людей!
+      <div class="row">
+        <div class="five wide column" style="text-align: center;">
+          <select class="ui dropdown">
+            <option value="">Gender</option>
+            <option value="1">+7 (000) 123-45-46</option>
+            <option value="0">+7 (999) 876-54-32</option>
+          </select>
         </div>
-        <div style="width: 350px;">
-          <b>где нельзя распространять:</b><br />
-          крепить/клеить на объектах культурного наследия (на фасадах,
-          памятниках и пр.), на столбах (в т.ч. опорах освещения, опорах
-          контактной сети), деревьях, заборах, на остановках транспорта и в
-          транспорте, на информационных знаках (в т.ч. знаках транспортных и
-          инженерных коммуникаций), на ограждениях.
+        <div class="five wide column" style="text-align: center;">
+          <select class="ui dropdown">
+            <option value="">Gender</option>
+            <option value="1">+7 (999) 876-54-32</option>
+            <option value="0">+7 (000) 123-45-46</option>
+          </select>
+        </div>
+        <div class="six wide column" style="text-align: center;">
+          <h1>Генерируем объявление</h1>
         </div>
       </div>
 
-      <div class="block">
-        <h1 style="text-align: center;">
-          Спасибо, что вместе с нами поддерживаете жертв домашнего насилия
-        </h1>
+      <div class="row">
+        <div class="sixteen wide column" style="text-align: right;">
+          <button class="ui button black massive fluid">Скачать объявление</button>
+        </div>
       </div>
 
-      <div class="block" style="justify-content: space-between; padding: 20px;">
-        <div>
-          Обратная связь<br />
-          every3help@gmail.com
+      <div class="row">
+        <div class="eight wide column">
+          <h1>Печатаем</h1>
         </div>
-        <div style="text-align: right;">
-          Рассказать друзьям о сайте<br />
-          Какая-то кнопка???
+        <div class="eight wide column"></div>
+      </div>
+
+      <div class="row">
+        <div class="eight wide column"></div>
+        <div class="eight wide column">
+          <h1>Прорезаем</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="six wide column">
+          <h1>Распространяем</h1>
+        </div>
+        <div class="five wide column">
+          <b>где можно распространять:</b>
+          <p>
+            информационные стенды и доски для объявлений в подъезде, офисе,
+            школе, университете и в других пространствах. Пожалуйста, по
+            возможности спрашивайте разрешение на распространение объявления на
+            конкретной площадке – за счёт этого оно дольше будет висеть и
+            соответственно приносить пользу, его увидят больше людей!
+          </p>
+        </div>
+        <div class="five wide column">
+          <b>где нельзя распространять:</b>
+          <p>
+            крепить/клеить на объектах культурного наследия (на фасадах,
+            памятниках и пр.), на столбах (в т.ч. опорах освещения, опорах
+            контактной сети), деревьях, заборах, на остановках транспорта и в
+            транспорте, на информационных знаках (в т.ч. знаках транспортных и
+            инженерных коммуникаций), на ограждениях.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column" style="text-align: center;">
+          <h1>
+            Спасибо, что вместе с нами поддерживаете жертв домашнего насилия
+          </h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three wide column">
+          <p>Обратная связь every3help@gmail.com</p>
+        </div>
+        <div class="ten wide column"></div>
+        <div class="three wide column" style="text-align: right;">
+          <p>Рассказать друзьям о сайте Какая-то кнопка???</p>
         </div>
       </div>
     </div>
@@ -211,6 +259,8 @@
           body: JSON.stringify({ orgname, phone, address }),
         }).then((response) => response.blob().then((data) => draw(data)));
       }
+
+      $(".ui.dropdown").dropdown();
     </script>
   </body>
 </html>
