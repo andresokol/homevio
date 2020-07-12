@@ -25,17 +25,13 @@ div.drawn_button_cnt {
 }
 
 div.drawn_button {
-  width: 420px;
+  /* width: 420px;
   height: 80px;
   padding: 10px 50px;
   box-sizing: border-box;
-
-  background-image: url("./img/button_bg.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-
   font-weight: 700;
+
+  cursor: pointer; */
 }
 
 div.download_counter {
@@ -48,7 +44,7 @@ div.download_counter {
 
   width: 380px;
   height: 260px;
-  padding: 45px 0 0 0;
+  padding: 25px 0 0 0;
   box-sizing: border-box;
 }
 
@@ -75,4 +71,8 @@ p.e {
   font-weight: 900;
   font-size: 120px;
   color: #d0cece;
+}
+
+.m_hidden {
+  display: none;
 }

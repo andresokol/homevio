@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>every3.help</title>
+    <title>каждая третья</title>
+    <link rel="icon" type="image/ico" href="/favicon.ico" />
 
     <link
       rel="stylesheet"
@@ -17,7 +18,7 @@
 
     <script
       type="text/javascript"
-      src="http://code.jquery.com/jquery-latest.min.js"
+      src="https://code.jquery.com/jquery-latest.min.js"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <style>
@@ -57,12 +58,25 @@
           </p>
 
           <div class="drawn_button_cnt">
-            <div class="drawn_button">Домашнее насилие -- это</div>
-            <div class="drawn_button">
+            <div
+              class="ui button drawn_button"
+              onclick="showModalBySelector('#modal_1')"
+            >
+              Что такое домашнее насилие
+            </div>
+            <div
+              class="ui button drawn_button"
+              onclick="showModalBySelector('#modal_2')"
+            >
               Почему объявление с отрывными листками
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="row">
+        <!-- just space -->
+        <br />
       </div>
 
       <div class="row">
@@ -75,14 +89,21 @@
         </div>
         <div class="ten wide column">
           <h1>Подготавливаем материалы</h1>
+          <ul>
+            <li>лист бумаги А4</li>
+            <li>ч/б или цветной принтер</li>
+            <li>канцелярский нож/ножницы</li>
+            <li>клей/кнопки/скотч</li>
+          </ul>
           <p>
-            - лист бумаги А4<br />
-            - ч/б или цветной принтер<br />
-            - канцелярский нож/ножницы<br />
-            - клей/кнопки/скотч<br />
-            и настроение менять мир<br />
+            и настроение менять мир
           </p>
         </div>
+      </div>
+
+      <div class="row">
+        <!-- just space -->
+        <br />
       </div>
 
       <div class="row">
@@ -92,34 +113,49 @@
       </div>
 
       <div class="row">
-        <div class="five wide column" style="text-align: center;">
-          <select class="ui dropdown">
-            <option value="">Gender</option>
-            <option value="1">+7 (000) 123-45-46</option>
-            <option value="0">+7 (999) 876-54-32</option>
-          </select>
+        <div class="eight wide column">
+          <form class="ui form" style="text-align: center;">
+            <div class="field">
+              <label>Город</label>
+              <select class="ui dropdown search" id="city_dropdown"> </select>
+            </div>
+
+            <div class="field m_hidden" id="centers_list_parent">
+              <label>Кризисный центр</label>
+              <div class="ui vertical menu fluid" id="centers_list"></div>
+            </div>
+          </form>
         </div>
-        <div class="five wide column" style="text-align: center;">
-          <select class="ui dropdown">
-            <option value="">Gender</option>
-            <option value="1">+7 (999) 876-54-32</option>
-            <option value="0">+7 (000) 123-45-46</option>
-          </select>
-        </div>
-        <div class="six wide column" style="text-align: center;">
-          <h1>Генерируем объявление</h1>
+        <div class="eight wide column" style="text-align: center;">
+          <img src="https://semantic-ui.com/images/wireframe/image.png" />
         </div>
       </div>
 
       <div class="row">
         <div class="sixteen wide column" style="text-align: right;">
-          <button class="ui button black massive fluid">Скачать объявление</button>
+          <a
+            class="ui button black massive fluid disabled"
+            target="blank"
+            id="download_button"
+            href=""
+          >
+            Скачать объявление
+          </a>
         </div>
+      </div>
+
+      <div class="row">
+        <!-- just space -->
+        <br />
       </div>
 
       <div class="row">
         <div class="eight wide column">
           <h1>Печатаем</h1>
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
         <div class="eight wide column"></div>
       </div>
@@ -128,7 +164,16 @@
         <div class="eight wide column"></div>
         <div class="eight wide column">
           <h1>Прорезаем</h1>
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
+      </div>
+
+      <div class="row">
+        <!-- just space -->
+        <br />
       </div>
 
       <div class="row">
@@ -158,6 +203,11 @@
       </div>
 
       <div class="row">
+        <!-- just space -->
+        <br />
+      </div>
+
+      <div class="row">
         <div class="column" style="text-align: center;">
           <h1>
             Спасибо, что вместе с нами поддерживаете жертв домашнего насилия
@@ -166,14 +216,39 @@
       </div>
 
       <div class="row">
+        <!-- just space -->
+        <br />
+      </div>
+
+      <div class="row">
         <div class="three wide column">
           <p>Обратная связь every3help@gmail.com</p>
         </div>
-        <div class="ten wide column"></div>
-        <div class="three wide column" style="text-align: right;">
-          <p>Рассказать друзьям о сайте Какая-то кнопка???</p>
+        <div class="nine wide column"></div>
+        <div class="four wide column" style="text-align: right;">
+          <p>Рассказать друзьям о сайте</p>
+          <script
+            src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"
+            async="async"
+          ></script>
+          <script
+            src="https://yastatic.net/share2/share.js"
+            async="async"
+          ></script>
+          <div
+            class="ya-share2"
+            data-description="Какая-то кнопка???"
+            data-title="Какая-то кнопка???"
+            data-url="https://every3.help/"
+            data-services="vkontakte,facebook,odnoklassniki,twitter,viber,whatsapp,telegram"
+          ></div>
         </div>
       </div>
+    </div>
+
+    <div class="row">
+      <!-- just space -->
+      <br />
     </div>
 
     <div style="width: 100%; height: 530px; background-color: #c4c4c4;"></div>
@@ -182,85 +257,86 @@
       <p class="e">КАЖДАЯ ТРЕТЬЯ</p>
     </div>
 
-    <!-- <h1>Hello, world</h1>
-
-  <div>
-    <h2>Форма так форма</h2>
-
-    <div>
-      <label>Название: </label>
-      <input id="input_orgname" type="text" value="Центр Центральный Центрище Центр" />
+    <div class="ui modal" id="modal_1">
+      <i class="close icon"></i>
+      <!-- <div class="header">
+        Modal Title
+      </div> -->
+      <div class="content">
+        <p>
+          Домашнее насилие – это проблема, с которой сталкиваются семьи по всему
+          миру – вне зависимости от материального положения и уровня образования
+          их членов. К домашнему насилию относится
+          <b>не только физическое</b> (побои, истязания), но и психологическое,
+          экономическое и другие виды насилия¹. Чаще всего жертвами домашнего
+          насилия становятся <b>женщины</b>, а также дети и пожилые люди².
+        </p>
+        <p>
+          Невозможно точно ответить на вопрос о том, сколько людей сталкивается
+          с домашним насилием –
+          <b>чаще всего жертвы не обращаются в полицию</b>, а значит официальная
+          статистика не отражает масштаб проблемы. По данным ВЦИОМ,
+          <b>40%</b> россиян знают о случаях побоев в своих семьях или семьях
+          знакомых (2019 г.)³. ООН сообщает, что
+          <b>каждая третья женщина в мире</b>
+          хотя бы раз в жизни сталкивается с физическим или сексуализированным
+          насилием, что делает насилие в отношении женщин самым частым и одним
+          из наименее задокументированных нарушением прав человека.
+        </p>
+        <p>
+          С 2017 г. домашнее насилие в России <b>декриминализировано</b>. Это
+          значит, что за него предусмотрено административное наказание – прямо
+          как за переход дороги не по «зебре». Декриминализация означает, что
+          государство отказывается помогать жертвам домашнего насилия. Сегодня в
+          России такой помощью преимущественно занимается ряд некоммерческих
+          организаций, активисты и активистки.
+          <b
+            >Вместе с проектом «Каждая третья» вы присоединитесь к движению в
+            поддержку жертв домашнего насилия.</b
+          >
+        </p>
+      </div>
+      <div class="actions">
+        <div class="ui button cancel">Назад</div>
+      </div>
     </div>
-    <div>
-      <label>Телефон: </label>
-      <input id="input_phone" type="text" value="+7 (999) 000-00-00" />
+
+    <div class="ui modal" id="modal_2">
+      <i class="close icon"></i>
+      <!-- <div class="header">
+        Modal Title
+      </div> -->
+      <div class="content">
+        <p>
+          Проект «Каждая третья» полностью опирается на активизм. <b>Наш</b> –
+          команды проекта – <b>и ваш</b> – тех, кто поддерживает идею. С помощью
+          этого сайта любой человек, имеющий доступ к интернету и минимальному
+          набору предметов, необходимых для печати, сможет:
+        </p>
+        <b>
+          <ul>
+            <li>
+              повысить осведомлённость окружающих о проблеме домашнего насилия,
+            </li>
+            <li>предоставить жертвам насилия шанс на спасение.</li>
+          </ul>
+        </b>
+        <p>
+          Мы выбрали именно такой формат – объявления с отрывными листками –
+          из-за его функциональности: по нашей задумке, основная часть
+          объявления будет нести просветительскую функцию, а отрывные листки,
+          содержащие ценные для жертвы насилия телефоны (ближайшего кризисного
+          центра и горячей линии), будет удобно быстро сорвать и взять с собой.
+        </p>
+        <p>
+          Присоединяясь к нам, вы помогаете другим!
+        </p>
+      </div>
+      <div class="actions">
+        <div class="ui button cancel">Назад</div>
+      </div>
     </div>
-    <div>
-      <label>Адрес: </label>
-      <input id="input_address" type="text" value="Ковров, ул. Воздвиженская, д. 67" />
-    </div>
 
-    <button onclick="handleClickSubmit(event)">Нажми меня</button>
-  </div>
-
-  <hr />
-
-  <div>
-    <h1>Результат так результат</h1>
-    <div>
-      <img id="img_target" />
-    </div>
-  </div> -->
-
-    <script>
-      setInterval(function () {
-        var cnt = Math.floor(Math.random() * 2000) + 1;
-        var cnt_description = "объявлений";
-
-        if (cnt % 100 >= 10 && cnt % 100 < 20) {
-          //
-        } else if (cnt % 10 == 1) {
-          cnt_description = "объявление";
-        } else if (cnt % 10 == 2 || cnt % 10 == 3 || cnt % 10 == 4) {
-          cnt_description = "объявления";
-        }
-
-        document.getElementById("download_counter_number").innerText = cnt;
-        document.getElementById(
-          "download_counter_descriptor"
-        ).innerText = cnt_description;
-      }, 2000);
-
-      function draw(data) {
-        console.log(data);
-        var reader = new FileReader();
-        reader.readAsDataURL(data);
-        reader.onloadend = function () {
-          document.getElementById("img_target").src = reader.result;
-        };
-      }
-
-      function handleClickSubmit(event) {
-        // resetting
-        document.getElementById("img_target").src = "";
-
-        console.log(event);
-        var orgname = document.getElementById("input_orgname").value;
-        var phone = document.getElementById("input_phone").value;
-        var address = document.getElementById("input_address").value;
-
-        console.log(orgname, phone, address);
-
-        fetch(`http://localhost:5001/homevio/us-central1/genImage/`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json;charset=utf-8",
-          },
-          body: JSON.stringify({ orgname, phone, address }),
-        }).then((response) => response.blob().then((data) => draw(data)));
-      }
-
-      $(".ui.dropdown").dropdown();
-    </script>
+    <script src="./data.js"></script>
   </body>
 </html>
