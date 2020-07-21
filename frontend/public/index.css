@@ -76,3 +76,28 @@ p.e {
 .m_hidden {
   display: none;
 }
+
+.step0 {
+  background-image: url("/img/step_0.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+.step1 {
+  background-image: url("/img/step_1.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
+.step2 {
+  background-image: url("/img/step_2.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+.step3 {
+  background-image: url("/img/step_3.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
