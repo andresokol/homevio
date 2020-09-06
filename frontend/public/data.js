@@ -26,6 +26,8 @@ var DATA = {
   ],
 };
 
+var API_URL = "https://homevio-backend.herokuapp.com";
+
 var SELECTED_CITY = undefined;
 var SELECTED_ITEM = undefined;
 
@@ -60,9 +62,14 @@ function redrawSelectedCenter(selected) {
 
   $("#centers_list").html(x);
 
-  $("#download_button").attr("href", `./${SELECTED_CITY}_${SELECTED_ITEM}.pdf`);
+  // $("#download_button").attr("href", `${SELECTED_CITY}_${SELECTED_ITEM}.pdf`);
+  $("#download_button").attr("href", `${API_URL}/demo.txt`);
   $("#download_button").removeClass("disabled");
   $("#centers_list_parent").removeClass("m_hidden");
+}
+
+function handleDownloadFile(fname) {
+  fetch(`${API_URL}/cnt`, { method: "POST" });
 }
 
 function buildCityList() {
@@ -89,7 +96,6 @@ function closeModals() {
 }
 
 function setDownloadsCounter(cnt) {
-  var cnt = Math.floor(Math.random() * 2000) + 1;
   var cnt_description = "объявлений";
 
   if (cnt % 100 >= 10 && cnt % 100 < 20) {
@@ -100,15 +106,20 @@ function setDownloadsCounter(cnt) {
     cnt_description = "объявления";
   }
 
-  document.getElementById("download_counter_number").innerText = cnt;
-  document.getElementById(
-    "download_counter_descriptor"
-  ).innerText = cnt_description;
+  $("#download_counter_number").text(cnt);
+  $("#download_counter_descriptor").text(cnt_description);
 
+  console.log(cnt, cnt_description);
 }
 
 $(document).ready(function () {
-  fetch("http://localhost:8080/cnt").then((res,) => setDownloadsCounter(res.json().cnt));
+  fetch(`${API_URL}/cnt`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      setDownloadsCounter(data.cnt);
+    });
 
   buildCityList();
 });
