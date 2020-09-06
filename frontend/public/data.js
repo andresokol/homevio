@@ -88,24 +88,27 @@ function closeModals() {
   $(".ui.modal").modal("hide");
 }
 
+function setDownloadsCounter(cnt) {
+  var cnt = Math.floor(Math.random() * 2000) + 1;
+  var cnt_description = "объявлений";
+
+  if (cnt % 100 >= 10 && cnt % 100 < 20) {
+    //
+  } else if (cnt % 10 == 1) {
+    cnt_description = "объявление";
+  } else if (cnt % 10 == 2 || cnt % 10 == 3 || cnt % 10 == 4) {
+    cnt_description = "объявления";
+  }
+
+  document.getElementById("download_counter_number").innerText = cnt;
+  document.getElementById(
+    "download_counter_descriptor"
+  ).innerText = cnt_description;
+
+}
+
 $(document).ready(function () {
-  setInterval(function () {
-    var cnt = Math.floor(Math.random() * 2000) + 1;
-    var cnt_description = "объявлений";
-
-    if (cnt % 100 >= 10 && cnt % 100 < 20) {
-      //
-    } else if (cnt % 10 == 1) {
-      cnt_description = "объявление";
-    } else if (cnt % 10 == 2 || cnt % 10 == 3 || cnt % 10 == 4) {
-      cnt_description = "объявления";
-    }
-
-    document.getElementById("download_counter_number").innerText = cnt;
-    document.getElementById(
-      "download_counter_descriptor"
-    ).innerText = cnt_description;
-  }, 2000);
+  fetch("http://localhost:8080/cnt").then((res,) => setDownloadsCounter(res.json().cnt));
 
   buildCityList();
 });
