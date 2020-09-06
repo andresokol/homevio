@@ -34,25 +34,48 @@
     </style>
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym"
+      );
 
-    ym(66425005, "init", {
-          clickmap:true,
-          trackLinks:true,
-          accurateTrackBounce:true
-    });
+      ym(66425005, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+      });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/66425005" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/66425005"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
     <!-- /Yandex.Metrika counter -->
   </head>
 
   <body>
     <div class="ui container grid">
       <div class="row">
-        <div class="four wide column" style="text-align: center;">
+        <div class="four wide column" style="text-align: center">
           <div class="logo_mock"></div>
         </div>
         <div class="twelve wide column">
@@ -94,7 +117,7 @@
         <br />
       </div>
 
-      <div class="row">
+      <div class="row step0">
         <div class="six wide column">
           <div class="download_counter">
             <p>скачано</p>
@@ -110,9 +133,7 @@
             <li>канцелярский нож/ножницы</li>
             <li>клей/кнопки/скотч</li>
           </ul>
-          <p>
-            и настроение менять мир
-          </p>
+          <p>и настроение менять мир</p>
         </div>
       </div>
 
@@ -122,17 +143,18 @@
       </div>
 
       <div class="row">
-        <div class="sixteen wide column" style="text-align: center;">
+        <div class="sixteen wide column" style="text-align: center">
           <h1>Генерируем объявление</h1>
         </div>
       </div>
 
-      <div class="row">
-        <div class="eight wide column">
-          <form class="ui form" style="text-align: center;">
+      <div class="row step1">
+        <div class="four wide column"></div>
+        <div class="six wide column">
+          <form class="ui form" style="text-align: center">
             <div class="field">
               <label>Город</label>
-              <select class="ui dropdown search" id="city_dropdown"> </select>
+              <select class="ui dropdown search" id="city_dropdown"></select>
             </div>
 
             <div class="field m_hidden" id="centers_list_parent">
@@ -141,13 +163,13 @@
             </div>
           </form>
         </div>
-        <div class="eight wide column" style="text-align: center;">
+        <div class="six wide column" style="text-align: center">
           <img src="https://semantic-ui.com/images/wireframe/image.png" />
         </div>
       </div>
 
       <div class="row">
-        <div class="sixteen wide column" style="text-align: right;">
+        <div class="sixteen wide column" style="text-align: right">
           <a
             class="ui button black massive fluid disabled"
             id="download_button"
@@ -182,27 +204,41 @@
       </div>
 
       <div class="row">
-        <div class="six wide column">
+        <div class="sixteen wide column center aligned">
           <h1>Распространяем</h1>
         </div>
-        <div class="five wide column">
-          <b>где можно распространять:</b>
+      </div>
+      <div class="row">
+        <div class="six wide column">
+          <p><b>где можно распространять:</b></p>
+
           <p>
-            информационные стенды и доски для объявлений в подъезде, офисе,
-            школе, университете и в других пространствах. Пожалуйста, по
-            возможности спрашивайте разрешение на распространение объявления на
-            конкретной площадке – за счёт этого оно дольше будет висеть и
-            соответственно приносить пользу, его увидят больше людей!
+            <b>на информационных стендах и досках для объявлений</b> (в
+            подъезде, офисе, коворкинге, школе, университете и в других
+            пространствах)
+          </p>
+
+          <p>
+            Пожалуйста, спрашивайте разрешение на распространение объявления на
+            конкретной площадке – за счёт этого оно дольше будет висеть и его
+            увидят больше людей!
           </p>
         </div>
-        <div class="five wide column">
-          <b>где нельзя распространять:</b>
+        <div class="four wide column">
+          <img src="./img/anim_cut.gif" />
+        </div>
+        <div class="six wide column">
+          <p><b>где нельзя распространять:</b></p>
           <p>
-            крепить/клеить на объектах культурного наследия (на фасадах,
-            памятниках и пр.), на столбах (в т.ч. опорах освещения, опорах
-            контактной сети), деревьях, заборах, на остановках транспорта и в
-            транспорте, на информационных знаках (в т.ч. знаках транспортных и
-            инженерных коммуникаций), на ограждениях.
+            • на деревьях,<br />
+            • на спинах соседей и соседок по подъезду,<br />
+            • на объектах культурного наследия (на фасадах, памятниках и
+            пр.),<br />
+            • на столбах (в т.ч. опорах освещения, опорах контактной сети),<br />
+            • на заборах и ограждениях,<br />
+            • на остановках транспорта и в транспорте,<br />
+            • на информационных знаках (в т.ч. знаках транспортных и инженерных
+            коммуникаций)
           </p>
         </div>
       </div>
@@ -213,7 +249,7 @@
       </div>
 
       <div class="row">
-        <div class="column" style="text-align: center;">
+        <div class="column" style="text-align: center">
           <h1>
             Спасибо, что вместе с нами поддерживаете жертв домашнего насилия
           </h1>
@@ -230,7 +266,7 @@
           <p>Обратная связь every3help@gmail.com</p>
         </div>
         <div class="nine wide column"></div>
-        <div class="four wide column" style="text-align: right;">
+        <div class="four wide column" style="text-align: right">
           <p>Рассказать друзьям о сайте</p>
           <script
             src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"
@@ -256,7 +292,7 @@
       <br />
     </div>
 
-    <div style="width: 100%; height: 530px; background-color: #c4c4c4;"></div>
+    <div style="width: 100%; height: 530px; background-color: #c4c4c4"></div>
 
     <div class="container">
       <p class="e">КАЖДАЯ ТРЕТЬЯ</p>
@@ -333,9 +369,7 @@
           содержащие ценные для жертвы насилия телефоны (ближайшего кризисного
           центра и горячей линии), будет удобно быстро сорвать и взять с собой.
         </p>
-        <p>
-          Присоединяясь к нам, вы помогаете другим!
-        </p>
+        <p>Присоединяясь к нам, вы помогаете другим!</p>
       </div>
       <div class="actions">
         <div class="ui button cancel">Назад</div>
