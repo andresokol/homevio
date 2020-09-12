@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>каждая третья</title>
-    <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
 
     <link
       rel="stylesheet"
@@ -93,8 +93,8 @@
           <p>
             Этот сайт – живой инструмент для системной профилактики домашнего
             насилия на локальном уровне, буквально на уровне вашего подъезда!
-            Листайте вниз, чтобы за несколько шагов создать своё объявление с
-            отрывными листками.
+            Листайте вниз, чтобы за несколько шагов создать своё
+            <b>объявление с отрывными листками.</b>
           </p>
 
           <div class="drawn_button_cnt">
@@ -120,8 +120,8 @@
       </div>
 
       <div class="row step0">
-        <div class="six wide column">
-          <div class="download_counter">
+        <div class="four wide column">
+          <div class="download_counter" style="padding: 2rem 1rem">
             <p>скачано</p>
             <p id="download_counter_number"></p>
             <p id="download_counter_descriptor"></p>
@@ -136,18 +136,18 @@
             <li>канцелярский нож/ножницы</li>
             <li>клей/кнопки/скотч</li>
           </ul>
-          <img src="/img/motive.png" />
+          <img src="/img/motive.png" style="width: 90%" />
         </div>
       </div>
 
-      <div class="row">
+      <div class="row" style="padding: 50px">
         <!-- just space -->
         <br />
       </div>
 
       <div class="row">
         <img
-          src="/img/step_1.png"
+          src="/img/step_1_v3.png"
           style="position: absolute; height: 400px; top: 50px"
         />
         <div class="sixteen wide column" style="text-align: center">
@@ -164,6 +164,11 @@
               <select class="ui dropdown search" id="city_dropdown"></select>
             </div>
 
+            <div class="ui message m_hidden" id="centers_list_comment">
+              Если в городе несколько центров, мы выбираем случайный — а вы
+              можете поставить галочку на любом из списка
+            </div>
+
             <div class="field m_hidden" id="centers_list_parent">
               <label>Кризисный центр</label>
               <div class="ui vertical menu fluid" id="centers_list"></div>
@@ -171,7 +176,7 @@
           </form>
         </div>
         <div class="six wide column" style="text-align: center">
-          <img src="https://semantic-ui.com/images/wireframe/image.png" />
+          <img src="/img/demo.png" style="height: 350px" />
         </div>
       </div>
 
@@ -188,24 +193,36 @@
         </div>
       </div>
 
-      <div class="row">
+      <div style="text-align: right; font-size: 80%; width: 100%">
+        Наша база контактов кризисных центров основывается
+        <a href="https://nasiliu.net/karta-pomoshhi/"
+          >на карте помощи АНО Насилию.Нет</a
+        >
+        по состоянию на 23 июня 2020<br />
+        Если вы хотите добавить новый контакт или сообщить об ошибке — свяжитесь
+        с нами <a href="mailto:every3help@gmail.com">every3help@gmail.com</a>
+      </div>
+
+      <div class="row" style="padding: 50px">
         <!-- just space -->
         <br />
-        <br />
       </div>
 
-      <div class="row centered step2">
-        <div class="six wide column">
+      <div class="row step2">
+        <div class="six wide column center aligned">
           <h1>Печатаем</h1>
-          <img src="./img/anim_print.gif" />
+          <img src="./img/anim_print_v2.gif" style="height: 320px" />
         </div>
-        <div class="six wide column right aligned">
+        <div class="six wide column left aligned">
           <img src="./img/anim_cut.gif" />
-          <h1>Прорезаем</h1>
+          <h1 style="line-height: 2rem">
+            Прорезаем<br />
+            <span style="font-size: 50%">по контуру</span>
+          </h1>
         </div>
       </div>
 
-      <div class="row">
+      <div class="row" style="padding: 50px">
         <!-- just space -->
         <br />
       </div>
@@ -213,6 +230,7 @@
       <div class="row">
         <div class="sixteen wide column center aligned">
           <h1>Распространяем</h1>
+          <img src="/img/step_3_v3.png" id="step_3_img" />
         </div>
       </div>
       <div class="row step3">
@@ -235,6 +253,8 @@
           <img src="./img/anim_distribute_v2.gif" />
         </div>
         <div class="six wide column">
+          <img src="/img/step_3_v3_more.png" id="step_3_img_more" />
+
           <p><b>где нельзя распространять:</b></p>
           <p>
             • на деревьях,<br />
@@ -258,7 +278,8 @@
       <div class="row">
         <div class="column" style="text-align: center">
           <h1>
-            Спасибо, что вместе с нами поддерживаете жертв домашнего насилия
+            Спасибо, что вместе с нами поддерживаете пострадавших от домашнего
+            насилия
           </h1>
         </div>
       </div>

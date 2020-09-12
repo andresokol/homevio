@@ -1363,6 +1363,14 @@ function redrawSelectedCenter(selected) {
   $("#download_button").attr("href", `${API_URL}/big/${item.filename}`);
   $("#download_button").removeClass("disabled");
   $("#centers_list_parent").removeClass("m_hidden");
+
+  // console.log("ASDBG", DATA[SELECTED_CITY].length);
+
+  if (DATA[SELECTED_CITY].length <= 1) {
+    $("#centers_list_comment").addClass("m_hidden");
+  } else {
+    $("#centers_list_comment").removeClass("m_hidden");
+  }
 }
 
 function handleDownloadFile(fname) {

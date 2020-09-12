@@ -38,13 +38,13 @@ div.download_counter {
   text-align: center;
 
   background-image: url("./img/counter_bg.png");
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
 
-  width: 380px;
-  height: 260px;
-  padding: 25px 0 0 0;
+  /* width: 380px;
+  height: 260px; */
+  /* padding: 25px 0 0 0; */
   box-sizing: border-box;
 }
 
@@ -77,29 +77,43 @@ p.e {
   display: none;
 }
 
-.step0 {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background-image: url("/img/step_0_v2.png");
+div > div.step0 {
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  background-image: url("/img/step_0_v3.png");
   background-repeat: no-repeat;
   background-position: right;
-  background-size: contain;
+  background-size: auto;
 }
 .step1 {
-  background-image: url("/img/step_1.png");
+  background-image: url("/img/step_1_v3.png");
   background-repeat: no-repeat;
   background-position: left;
-  background-size: contain;
+  background-size: auto;
 }
 .step2 {
-  background-image: url("/img/step_2.png");
+  background-image: url("/img/step_2_v3.png");
   background-repeat: no-repeat;
   background-position: right;
-  background-size: contain;
+  background-size: auto;
 }
-.step3 {
-  background-image: url("/img/step_3.png");
+/* .step3 {
+  background-image: url("/img/step_3_v3.png");
   background-repeat: no-repeat;
   background-position: left;
   background-size: contain;
+} */
+
+#step_3_img {
+  position: absolute;
+  top: -2rem;
+  left: 1rem;
+  z-index: -1;
+}
+
+#step_3_img_more {
+  position: absolute;
+  top: -4rem;
+  left: 5rem;
+  z-index: -1;
 }
