@@ -313,14 +313,38 @@
           ></div>
         </div>
       </div>
+
+      <div class="row">
+        <!-- just space -->
+        <br />
+      </div>
     </div>
 
-    <div class="row">
-      <!-- just space -->
-      <br />
-    </div>
+    <div style="background-color: #e4e4e4">
+      <div class="ui container grid">
+        <div class="row"></div>
 
-    <div style="width: 100%; height: 530px; background-color: #c4c4c4"></div>
+        <div class="row">
+          <div class="two wide column"></div>
+
+          <div class="twelve wide column">
+            <div class="ui form">
+              <div class="field">
+                <label>email для обратной связи</label>
+                <textarea rows="1" id="feedback_email"></textarea>
+              </div>
+              <div class="field">
+                <label>сообщение</label>
+                <textarea id="feedback_body"></textarea>
+              </div>
+              <div class="ui button black" onclick="handleSubmitResponse()">Отправить</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row"></div>
+      </div>
+    </div>
 
     <div class="container">
       <p class="e">КАЖДАЯ ТРЕТЬЯ</p>

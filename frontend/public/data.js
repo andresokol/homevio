@@ -1377,6 +1377,20 @@ function handleDownloadFile(fname) {
   fetch(`${API_URL}/cnt`, { method: "POST" });
 }
 
+function handleSubmitResponse() {
+  var a = $("#feedback_body").val();
+  var b = $("#feedback_email").val();
+  console.log(a, b);
+  fetch(`${API_URL}/sumbitResponse`, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email: a, message: b })
+  });
+}
+
 function buildCityList() {
   console.log(`selected: ${SELECTED_CITY}_${SELECTED_ITEM}`);
 
