@@ -78,7 +78,9 @@ p.e {
 }
 
 .step0 {
-  background-image: url("/img/step_0.png");
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: url("/img/step_0_v2.png");
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;

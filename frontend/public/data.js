@@ -1326,7 +1326,7 @@ var CITIES = [
   { name: "г.о. Кашира, д. Лиды", value: "г.о. Кашира, д. Лиды" },
 ];
 
-var API_URL = "https://homevio-backend.herokuapp.com/big/";
+var API_URL = "https://homevio-backend.herokuapp.com";
 
 var SELECTED_CITY = undefined;
 var SELECTED_ITEM = undefined;
@@ -1360,7 +1360,7 @@ function redrawSelectedCenter(selected) {
   var item = DATA[SELECTED_CITY][SELECTED_ITEM];
 
   // $("#download_button").attr("href", `${SELECTED_CITY}_${SELECTED_ITEM}.pdf`);
-  $("#download_button").attr("href", `${API_URL}${item.filename}`);
+  $("#download_button").attr("href", `${API_URL}/big/${item.filename}`);
   $("#download_button").removeClass("disabled");
   $("#centers_list_parent").removeClass("m_hidden");
 }
