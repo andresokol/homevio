@@ -1,6 +1,6 @@
 import csv
 
-FILENAME = "/home/andresokol/Downloads/data.csv"
+FILENAME = "/home/andresokol/Downloads/data2.csv"
 
 
 cities = set()
@@ -25,5 +25,5 @@ x = []
 for city in cities:
     x += [{"name": city, "value": city}]
 
-print(sorted(x, key=lambda x: x["name"]))
-# print(data)
+# print(sorted(x, key=lambda x: x["name"]))
+print(data)
