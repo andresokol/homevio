@@ -114,3 +114,18 @@ div > div.step0 {
   left: 5rem;
   z-index: -1;
 }
+
+#bg_logo_text {
+  padding: 0;
+  margin: 0;
+  text-align: right;
+  font-weight: 900;
+  font-size: 120px;
+  color: #d0cece;
+  opacity: 0.55;
+
+  position: absolute;
+  top: -20px;
+  right: 10vw;
+  z-index: -1;
+}
