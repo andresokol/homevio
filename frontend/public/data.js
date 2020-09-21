@@ -1493,6 +1493,15 @@ var API_URL = "https://homevio-backend.herokuapp.com";
 
 var SELECTED_CITY = undefined;
 var SELECTED_ITEM = undefined;
+var SIZE_PREFIX = "big";
+
+function resetDownloadHref() {
+  var item = DATA[SELECTED_CITY][SELECTED_ITEM];
+  $("#download_button").attr(
+    "href",
+    `${API_URL}/${SIZE_PREFIX}/${item.filename}`
+  );
+}
 
 function redrawSelectedCenter(selected) {
   if (DATA[SELECTED_CITY] == undefined) {
@@ -1520,10 +1529,7 @@ function redrawSelectedCenter(selected) {
 
   $("#centers_list").html(x);
 
-  var item = DATA[SELECTED_CITY][SELECTED_ITEM];
-
-  // $("#download_button").attr("href", `${SELECTED_CITY}_${SELECTED_ITEM}.pdf`);
-  $("#download_button").attr("href", `${API_URL}/big/${item.filename}`);
+  resetDownloadHref();
   $("#download_button").removeClass("disabled");
   $("#centers_list_parent").removeClass("m_hidden");
 
@@ -1575,6 +1581,28 @@ function showModalBySelector(selector) {
 
 function closeModals() {
   $(".ui.modal").modal("hide");
+}
+
+function handleSelectAdType(type) {
+  $(".ui.ad_type_btn").removeClass("active");
+
+  var id = "#btn_selected_style_2";
+  SIZE_PREFIX = "big";
+  $("#ad_preview").attr("src", "/img/demo_big.png");
+
+  if (type == "3") {
+    id = "#btn_selected_style_3";
+    SIZE_PREFIX = "medium";
+    $("#ad_preview").attr("src", "/img/demo_medium.png");
+  }
+  if (type == "4") {
+    id = "#btn_selected_style_4";
+    SIZE_PREFIX = "small";
+    $("#ad_preview").attr("src", "/img/demo_small.png");
+  }
+
+  $(id).addClass("active");
+  resetDownloadHref();
 }
 
 function setDownloadsCounter(cnt) {

@@ -83,14 +83,14 @@
   </head>
 
   <body>
-    <div class="ui container grid">
-      <p id="bg_logo_text">КАЖДАЯ ТРЕТЬЯ</p>
+    <div class="ui container stackable grid">
+      <p id="bg_logo_text" class="hide_on_mobile">КАЖДАЯ ТРЕТЬЯ</p>
       <div class="row">
-        <div class="four wide column" style="text-align: center">
+        <div class="four wide column center aligned">
           <!-- <div class="logo_mock"></div> -->
-          <img src="./img/logo.png" />
+          <img src="./img/logo.png" id="site_logo" />
         </div>
-        <div class="twelve wide column">
+        <div class="twelve wide column" style="z-index: 2">
           <br />
           <p>
             Инициатива «Каждая третья» родилась в ответ на реальность: крики,
@@ -187,7 +187,12 @@
           </form>
         </div>
         <div class="six wide column" style="text-align: center">
-          <img src="/img/demo.png" style="height: 350px" />
+          <div class="ui buttons">
+            <button class="ui button ad_type_btn" id="btn_selected_style_2" onclick="handleSelectAdType(2)">x2</button>
+            <button class="ui button ad_type_btn active"  id="btn_selected_style_3"  onclick="handleSelectAdType(3)">x3</button>
+            <button class="ui button ad_type_btn"  id="btn_selected_style_4"  onclick="handleSelectAdType(4)">x4</button>
+          </div>
+          <img src="/img/demo_medium.png" id="ad_preview" style="height: 350px" />
         </div>
       </div>
 
@@ -264,7 +269,11 @@
           <img src="./img/anim_distribute_v2.gif" />
         </div>
         <div class="six wide column">
-          <img src="/img/step_3_v3_more.png" id="step_3_img_more" />
+          <img
+            src="/img/step_3_v3_more.png"
+            id="step_3_img_more"
+            class="hide_on_mobile"
+          />
 
           <p><b>где нельзя распространять:</b></p>
           <p>
@@ -305,7 +314,10 @@
           <p><b>Связаться с командой</b></p>
           <p>every3help@gmail.com</p>
         </div>
-        <div class="eight wide column center aligned">
+        <div
+          class="eight wide column center aligned"
+          id="social_networks_anchor"
+        >
           <p><b>Следить за обновлениями</b></p>
           <div>
             <a href="https://www.facebook.com/every3help/"

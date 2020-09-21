@@ -120,12 +120,27 @@ div > div.step0 {
   margin: 0;
   text-align: right;
   font-weight: 900;
-  font-size: 120px;
+  font-size: 96px;
   color: #d0cece;
   opacity: 0.55;
 
   position: absolute;
   top: -20px;
   right: 10vw;
-  z-index: -1;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 767px) {
+  .hide_on_mobile {
+    display: none;
+  }
+
+  img#site_logo {
+    max-width: 300px;
+  }
+
+  p.e {
+    font-size: 48px;
+    padding-top: 20px;
+  }
 }
